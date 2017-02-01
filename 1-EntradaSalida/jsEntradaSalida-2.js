@@ -11,7 +11,7 @@ function Mostar()
 	
 	var nombre; //Defino variable
 	nombre = "Juan Manuel"; //Cargo variable (ESTA LÌNEA NO ES NECESARIA)
-	nombre = prompt("Ingrese su nombre", "Natalia Natalia");
+	nombre = prompt("Ingrese su nombre", "Natalia Natalia"); //Variable "nombre" tiene ahora valor ingresado en prompt.
 	alert("Nombre: "+nombre); //Valores concatenales
 
 }
