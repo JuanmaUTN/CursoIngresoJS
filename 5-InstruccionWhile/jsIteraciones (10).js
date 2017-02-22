@@ -1,7 +1,6 @@
 function Mostrar() //iteracion hasta que el usuario quiera. 
 {
 	//alert("funciona");
-	var respuesta = "si";
 	var nota;
 	var contador = 0;
 	var sumadorNota = 0;
@@ -11,15 +10,18 @@ function Mostrar() //iteracion hasta que el usuario quiera.
 	var sexo;
 	var masViejo;
 	var edadMasViejo;
+	var mujeresAprobadas = 0;
+	var hombresAprobados25 = 0;
+	var mujeresMenores20 = 0;
 
-	while(contador < 5)
+	while(contador < 3)
 	{
 		contador ++;
 		nota = prompt("Por favor ingrese su nota.");
 		nota = parseInt(nota);
 		while(nota < 0 || nota > 10)
 		{
-			nota = prompt("Por favor ingrese su nota.");
+			nota = prompt("Por favor ingrese su nota. (entre 0 y 10)");
 			nota = parseInt(nota);	
 		}
 		
@@ -29,15 +31,15 @@ function Mostrar() //iteracion hasta que el usuario quiera.
 		edad = parseInt(edad);
 		while(edad < 0 || edad > 100)
 		{
-			edad = prompt("Ingrese una edad vàlida entre 0 y 100");
+			edad = prompt("Ingrese una edad vàlida. (entre 0 y 100)");
 			edad = parseInt(edad);
 		}
 		nombre = prompt("Ingrese su nombre.");
 
 		sexo = prompt("Ingrese su sexo.");
-		while(sexo == f || sexo == m) //error xd
+		while(sexo != "f" && sexo != "m")
 		{
-			sexo = prompt("Ingrese un sexo valido");
+			sexo = prompt("Ingrese un sexo valido. ('f' ó 'm')");
 		}
 		//acà termino la carga y validacion de datos.
 		//comenzamos a hacer las operaciones necesarias.
@@ -52,29 +54,62 @@ function Mostrar() //iteracion hasta que el usuario quiera.
 			{
 				masViejo = nombre;
 				edadMasViejo = edad;
-				/*
-				1) cantidad de mujeres aprobadas.
-				2) cantidad de hombres mayores a 25 aprobados.
-				3) cantidad de mujeres menores a 20 años.
-				4) nombre de la mujer con mejor nota.
-				5) nombre del hombre con mejor nota.
-				6) promedio nota de los hombres.
-				7) promedio de notas de las mujeres.
-				8) porcentaje de aprobados VS desaprobados.
-				9) el sexo y el nombre de la primer persona que se saque 10.
-				*/
+				
 			}
 		}
+		
+		//mujeres aprobadas
+		if(nota >= 4 && sexo == "f")
+		{
+			mujeresAprobadas ++;
+			console.log("Mujeres aprobadas: "+mujeresAprobadas);
+		}
+		//hombres aprobados mayores a 25
+		if(nota >= 4 && sexo == "m")
+		{
+			if(edad > 25)
+			{
+			hombresAprobados25 ++;
+			console.log("Hombres mayores a 25 aprobados: "+hombresAprobados25);
+			}
+		}
+		//cantidad de mujeres menores a 20
+		if(edad < 20 && sexo == "f")
+		{
+			mujeresMenores20 ++;
+			console.log("Mujeres menores a 20"+mujeresMenores20);
+		}
+		//nombre de la mujer con la mejor nota
 
-		respuesta = prompt("Ingrese si para continuar.");
+
+
+
+
+
+
+
+
+
 	}
 
 	promedioNota = sumadorNota / contador;
 
-	console.log(promedioNota);
+	console.log("Promedio de notas: "+promedioNota);
 
 
+/*
 
+1) cantidad de mujeres aprobadas.
+2) cantidad de hombres mayores a 25 aprobados.
+3) cantidad de mujeres menores a 20 años.
+4) nombre de la mujer con mejor nota.
+5) nombre del hombre con mejor nota.
+6) promedio nota de los hombres.
+7) promedio de notas de las mujeres.
+8) porcentaje de aprobados VS desaprobados.
+9) el sexo y el nombre de la primer persona que se saque 10.
+
+*/
 
 
 }//FIN DE LA FUNCIÒN

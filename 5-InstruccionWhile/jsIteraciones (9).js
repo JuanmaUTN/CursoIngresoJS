@@ -1,33 +1,15 @@
 function Mostrar()
 {
-
-	var contador=0;
-	// declarar variables
-	var max;
-	var min;
+	var contador = 0;
 	var numero;
-	var respuesta='si';
+	var minimo;
+	var maximo;
 
-	while(respuesta!='no')
-			{
-			if(contador == 0)
-				{
-					max = numero;
-					min = numero;
-				}
-			else 	
-				{
-					if(numero > max)
-						{
-							max = numero;
-						}
-					if(numero < min)
-						{
-							min = numero;
-						}
-				}
-		
-			}
-	document.getElementById('maximo').value = max;
-	document.getElementById('minimo').value = min;
+	while(contador < 5)
+	{
+		contador ++;
+	}
+	
+	document.getElementById('maximo').value = maximo;
+	document.getElementById('minimo').value = minimo;
 }//FIN DE LA FUNCIÓN
