@@ -11,16 +11,36 @@ var numeroSecreto;
 var contadorIntentos;
 
 function comenzar()
+//Genero el número RANDOM entre 1 y 100
 {
-	//Genero el número RANDOM entre 1 y 100
-	 
-		//alert(numeroSecreto );
-	
+	contadorIntentos = 0;
+	numeroSecreto = Math.floor(Math.random() *100) +1;
+	document.getElementById('intentos').value = contadorIntentos;
 
+	console.log(numeroSecreto);
 }
 
 function verificar()
 {
+	var numeroIngresado;
+
+	numeroIngresado = document.getElementById('numero').value;
+	contadorIntentos = contadorIntentos + 1;
+	document.getElementById('intentos').value = contadorIntentos;
 	
-	
+	if(numeroIngresado < numeroSecreto)
+		{
+			alert("Falta un toque.");
+		}
+	else 
+		{
+			if(numeroIngresado > numeroSecreto)
+				{
+					alert("Te pasaste.");
+				}
+			else
+				{
+					alert("Sos un crack.");
+				}
+		}
 }
