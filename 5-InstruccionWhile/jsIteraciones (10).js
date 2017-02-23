@@ -13,8 +13,14 @@ function Mostrar() //iteracion hasta que el usuario quiera.
 	var mujeresAprobadas = 0;
 	var hombresAprobados25 = 0;
 	var mujeresMenores20 = 0;
+	var totalHombres = 0;
+	var sumadorNotaH = 0;
+	var promedioNotaH;
+	var totalMujeres = 0;
+	var sumadorNotaM = 0;
+	var promedioNotaM;
 
-	while(contador < 3)
+	while(contador < 10)
 	{
 		contador ++;
 		nota = prompt("Por favor ingrese su nota.");
@@ -64,6 +70,7 @@ function Mostrar() //iteracion hasta que el usuario quiera.
 			mujeresAprobadas ++;
 			console.log("Mujeres aprobadas: "+mujeresAprobadas);
 		}
+		
 		//hombres aprobados mayores a 25
 		if(nota >= 4 && sexo == "m")
 		{
@@ -73,13 +80,42 @@ function Mostrar() //iteracion hasta que el usuario quiera.
 			console.log("Hombres mayores a 25 aprobados: "+hombresAprobados25);
 			}
 		}
+		
 		//cantidad de mujeres menores a 20
 		if(edad < 20 && sexo == "f")
 		{
 			mujeresMenores20 ++;
-			console.log("Mujeres menores a 20"+mujeresMenores20);
+			console.log("Mujeres menores a 20: "+mujeresMenores20);
 		}
+		
 		//nombre de la mujer con la mejor nota
+
+		
+		//nombre del hombre con mejor nota
+
+		
+		//promedio nota hombres
+		if(sexo == "m")
+		{
+			totalHombres ++;
+			sumadorNotaH = sumadorNotaH + nota;
+			promedioNotaH = sumadorNotaH / totalHombres;
+			console.log("El promedio de notas de los hombres es de: "+promedioNotaH);
+		}
+
+		//promedio nota mujeres
+		if(sexo == "f")
+		{
+			totalMujeres ++;
+			sumadorNotaM = sumadorNotaM + nota;
+			promedioNotaM = sumadorNotaM / totalMujeres;
+			console.log("El promedio de notas de las mujeres es de: "+promedioNotaM);
+		}
+
+		//porcentaje aprobados vs desaprobados
+
+		
+		//sexo y nombre de la 1er persona que saque 10
 
 
 

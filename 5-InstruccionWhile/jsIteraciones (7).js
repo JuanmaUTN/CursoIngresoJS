@@ -13,7 +13,7 @@ function Mostrar()
 		numero = parseInt(numero);
 		acumulador = acumulador + numero;
 	}
-
+	
 
 
 
